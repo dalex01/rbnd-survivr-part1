@@ -1,22 +1,25 @@
 class String
 	attr_reader :colors_codes, :colors
 
-	@@colors_codes = {:red 			=> "\e[31m",
-			   		  :green		=> "\e[32m",
-			   		  :yellow		=> "\e[33m",
-			   		  :blue			=> "\e[34m",
-			   		  :pink			=> "\e[35m",
-			   		  :light_blue	=> "\e[94m",
-			   		  :white		=> "\e[97m",
-			   		  :light_grey	=> "\e[37m",
-			   		  :black		=> "\e[30m"
+	@@colors_codes = {:red 				=> "\e[31m",
+			   		  			:green			=> "\e[32m",
+			   		  			:yellow			=> "\e[33m",
+			   		  			:blue				=> "\e[34m",
+			   		  			:pink				=> "\e[35m",
+			   		  			:light_blue	=> "\e[94m",
+			   		  			:white			=> "\e[97m",
+			   		  			:light_grey	=> "\e[37m",
+			   		  			:black			=> "\e[30m"
 			  		 }
+	def self.create_colors
+		@@colors_codes.each do |color, code|
+		  	self.send(:define_method, "#{color}") do
+				code + self + "\e[0m"
+			end
+	  	end
+	end
 
-	@@colors_codes.each do |color, code|
-	  	self.send(:define_method, "#{color}") do
-			code + self + "\e[0m"
-		end
-  	end
+	self.create_colors
 
 	String.class_eval {
 	  def self.color

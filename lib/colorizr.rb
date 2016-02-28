@@ -18,12 +18,15 @@ class String
 		end
   	end
 
-  	def color
-  		@@colors_codes.keys
-  	end
+	String.class_eval {
+	  def self.color
+	    @@colors_codes.keys
+	  end
+	}
 
-  	def sample_colors
-  		puts "Red text".red
+	String.class_eval {
+	  def self.sample_colors
+	    puts "Red text".red
   		puts "Green text".green
   		puts "Yellow text".yellow
   		puts "Blue text".blue
@@ -32,5 +35,8 @@ class String
   		puts "White text".white
   		puts "Light grey text".light_grey
   		puts "Black text".black
-  	end
+	  end
+	}
+
 end
+

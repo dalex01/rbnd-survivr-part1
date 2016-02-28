@@ -18,10 +18,10 @@ puts "*"*20
 puts "Test 'color' method"
 puts "*"*20
 
-puts "".color
+puts String.color
 
 puts "*"*20
 puts "Test 'sample_colors' method"
 puts "*"*20
 
-puts "".sample_colors
+puts String.sample_colors

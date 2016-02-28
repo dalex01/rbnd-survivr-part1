@@ -1,0 +1,12 @@
+How does your gem take advantage of Ruby’s metaprogramming capabilities?
+All similar methods are created via define_method method.
+
+How long did you spend working on this project?
+About 2-3 hours.
+
+What was the most rewarding challenge you conquered?
+Metaprogramming is MAGIC! 
+It seems that computers soon will develop programs instead of engineers.
+
+Where do you still have room to grow?
+I definitely need more practice in metaprogramming :)
